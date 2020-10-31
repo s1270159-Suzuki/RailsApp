@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'cards/index'
+  get 'cards', to: 'cards#index'
+  get 'cards/add'
+  post 'cards/add'
+  get 'cards/edit/:id', to: 'cards#edit'
+  patch 'cards/edit/:id', to: 'cards#edit'
+  get 'cards/delete/:id', to: 'cards#delete'
+  get 'cards/:id', to: 'cards#show'
+
+
   get 'people/index'
   get 'people', to: 'people#index'
   get 'people/add'
@@ -20,6 +30,6 @@ Rails.application.routes.draw do
   get 'hello', to: 'hello#index'
   post 'hello/index'
   post 'hello', to: 'hello#index'
-
   get 'hello/other'
+  
 end

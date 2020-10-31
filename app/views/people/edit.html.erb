@@ -1,7 +1,6 @@
 <h1 class="display-4 text-primary">People#edit</h1>
 <p><%= @msg %></p>
-<%= form_for(@person, url:{controller:'people', action:'update',
-  id:@person.id}) do |form| %>
+<%= form_for(@person, url:{controller:'people', action:'update', id:@person.id}) do |form| %>
   <div class="form-group">
     <label for="name">Name</label>
     <%= form.text_field :name, class:"form-control" %>

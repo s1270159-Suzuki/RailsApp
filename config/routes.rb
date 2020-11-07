@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  resources :mycontacts
+  get 'messages/index'
+  get 'messages', to: 'messages#index'
+  get 'messages/add'
+  post 'messages/add', to: 'messages#create'
+  get 'messages/edit/:id', to: 'messages#edit'
+  patch 'messages/edit/:id', to: 'messages#update'
+  get 'messages/delete/:id', to: 'messages#delete'
+  get 'messages/:id', to: 'messages#show'
+
+
   get 'cards/index'
   get 'cards', to: 'cards#index'
   get 'cards/add'
@@ -17,6 +28,8 @@ Rails.application.routes.draw do
   post 'people/edit/:id', to: 'people#update'
   patch 'people/edit/:id', to: 'people#update'
   get 'people/delete/:id', to: 'people#delete'
+  get 'people/find'
+  post 'people/find'
   get 'people/:id', to: 'people#show'
   
   
@@ -31,5 +44,5 @@ Rails.application.routes.draw do
   post 'hello/index'
   post 'hello', to: 'hello#index'
   get 'hello/other'
-  
+
 end
